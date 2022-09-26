@@ -1,0 +1,24 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ contador }} </p>
+    <p>{{ contador > 10 ? 'Maior do que 10' : 'Menor do que 10' }} </p>
+    <!-- tem como colocar expressões pequenas direto aqui
+    sem a necessidade de colocar no script-->
+    <button v-on:click="somar"> Somar 1 </button>
+
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0,
+        },
+        methods: {
+            somar(passo, event) {
+                this.contador++
+            },
+        }
+    })
+</script>

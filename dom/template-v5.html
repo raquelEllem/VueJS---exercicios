@@ -1,0 +1,30 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p v-once>{{ titulo }} </p>
+    <!-- v-once é uma diretiva, 
+        uma propriedade
+        que le o valor somente uma 
+    vez e se tiver qualquer alteração 
+    ao longo do código não altera o valor -->
+    <p>{{ saudacao() }} </p>
+    <a v-bind:href="link">Google</a>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'usando vuejs!',
+            link: 'http://google.com.br'
+
+        },
+        methods: {
+            saudacao: function() {
+                this.titulo = "Bom dia"
+                return this.titulo
+            }
+            
+        }
+    })
+</script>
